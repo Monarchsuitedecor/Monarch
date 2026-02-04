@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Monarch Suite Decor | Cape Town</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://i.postimg.cc/WpMP4rmT/hero-jpg.jpg'); 
+            background-size: cover;
+            background-position: center;
+        }
+        .rounded-luxury { border-radius: 24px; }
+        .gallery-img {
+            width: 100%; height: 400px; object-fit: cover;
+            border-radius: 15px; transition: 0.3s;
+        }
+        .gallery-img:hover { transform: scale(1.02); }
+        .monarch-input {
+            width: 100%; border-bottom-width: 2px; border-color: #e2e8f0; 
+            padding-top: 0.5rem; padding-bottom: 0.5rem; outline: none; transition: 0.3s;
+            font-size: 16px;
+        }
+        .monarch-input:focus { border-color: #000; }
+        #successModal { transition: opacity 0.3s ease-in-out; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <div id="successModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80">
+        <div class="bg-white rounded-luxury p-8 md:p-12 max-w-lg w-full text-center shadow-2xl border-4 border-black">
+            <h3 class="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tighter text-slate-900">👑 Request Received</h3>
+            <p class="text-slate-600 mb-8 leading-relaxed">
+                Thank you for choosing Monarch Suite Decor. Your inquiry is being reviewed by our lead stylist. To ensure every detail is perfect, a concierge will contact you via WhatsApp within 2–4 hours to finalize your luxury experience.
+            </p>
+            <button onclick="closeModal()" class="bg-black text-white px-10 py-4 rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg">Close</button>
+        </div>
+    </div>
+
+    <section class="hero-bg min-h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-8xl font-bold text-white mb-6 uppercase tracking-tighter">Monarch Suite Decor</h1>
+            <p class="text-lg md:text-2xl text-slate-200 mb-10 max-w-2xl mx-auto">Cape Town’s Signature Suite Stylists. Crafting Opulence for Your Most Intimate Occasions.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="bg-black text-white px-10 py-4 rounded-full font-bold uppercase hover:bg-slate-800 transition shadow-lg">Book Your Setup</a>
+                <a href="#packages" class="bg-white text-black px-10 py-4 rounded-full font-bold uppercase hover:bg-slate-100 transition shadow-lg">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="packages" class="py-20 container mx-auto px-6">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 uppercase text-slate-900">Birthday Packages</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white border border-slate-200 p-8 rounded-luxury flex flex-col shadow-sm">
+                <h3 class="text-2xl font-bold mb-2">Monarch Entry</h3>
+                <div class="text-3xl font-bold mb-6">R1,950</div>
+                <ul class="space-y-3 mb-8 flex-grow text-sm uppercase">
+                    <li>✓ 40 Luxury Balloons with Ribbons</li>
+                    <li>✓ Happy Birthday Statement Banner</li>
+                    <li>✓ Signature Petal Pathway</li>
+                    <li>✓ Double-Ring Petal Heart on Bed</li>
+                    <li>✓ Gold-framed Welcome Card</li>
+                    <li>✓ Satin Ribbon Pillow Finishes</li>
+                </ul>
+                <a href="#booking" class="w-full py-3 bg-black text-white text-center rounded-full font-bold uppercase">Book Now</a>
+            </div>
+
+            <div class="bg-white border-4 border-black p-8 rounded-luxury flex flex-col relative shadow-2xl">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-black text-white px-6 py-1 text-xs rounded-full font-bold uppercase">Most Popular</div>
+                <h3 class="text-2xl font-bold mb-2">Royal Romance</h3>
+                <div class="text-3xl font-bold mb-6">R3,600</div>
+                <ul class="space-y-3 mb-8 flex-grow text-sm font-bold uppercase">
+                    <li>✓ 60 Luxury Balloons with Ribbons</li>
+                    <li>✓ Happy Birthday Statement Banner</li>
+                    <li>✓ 5 Floating Heart Foils</li>
+                    <li>✓ Full Spa Bath Immersion Setup</li>
+                    <li>✓ Signature Petal Pathway</li>
+                    <li>✓ Double-Ring Petal Heart on Bed</li>
+                    <li>✓ Satin Ribbon Pillow Finishes</li>
+                    <li>✓ Luxury Lindor Chocolates</li>
+                </ul>
+                <a href="#booking" class="w-full py-4 bg-black text-white text-center rounded-full font-bold uppercase">Book Now</a>
+            </div>
+
+            <div class="bg-white border border-slate-200 p-8 rounded-luxury flex flex-col shadow-sm">
+                <h3 class="text-2xl font-bold mb-2">Imperial Suite</h3>
+                <div class="text-3xl font-bold mb-6">R6,200</div>
+                <ul class="space-y-3 mb-8 flex-grow text-sm uppercase">
+                    <li>✓ Custom Vinyl Floor Decal</li>
+                    <li>✓ 70 Luxury Balloons with Ribbons</li>
+                    <li>✓ Happy Birthday Statement Banner</li>
+                    <li>✓ 15 Hanging Photo Memories</li>
+                    <li>✓ Chilled Bottle of Premium MCC</li>
+                    <li>✓ Full Spa Bath Immersion Setup</li>
+                    <li>✓ Signature Petal Pathway</li>
+                    <li>✓ Double-Ring Petal Heart on Bed</li>
+                    <li>✓ Satin Ribbon Pillow Finishes</li>
+                </ul>
+                <a href="#booking" class="w-full py-3 bg-black text-white text-center rounded-full font-bold uppercase">Book Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="exclusive" class="py-20 bg-slate-50 border-y border-slate-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-2 uppercase text-slate-900">Exclusive Collections</h2>
+            <p class="text-slate-500 italic mb-16 text-center uppercase text-sm tracking-widest px-4 max-w-3xl mx-auto leading-relaxed">Our Signature Masterpieces. Intimate luxury, reimagined for your most significant moments.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="bg-white p-10 rounded-luxury shadow-md border border-slate-100">
+                    <h3 class="text-3xl font-bold mb-2">The Sovereign</h3>
+                    <div class="text-2xl font-bold mb-6">R8,900</div>
+                    <ul class="space-y-4 mb-8 text-sm uppercase font-semibold">
+                        <li>✓ The Monarch Balloon Cloud</li>
+                        <li>✓ Custom Personalized Name Banner</li>
+                        <li>✓ Luxury Artisanal Charcuterie Board</li>
+                        <li>✓ Custom Vinyl Floor Decal</li>
+                        <li>✓ Chilled Bottle of Premium MCC</li>
+                        <li>✓ Full Spa Bath Immersion Setup</li>
+                        <li>✓ Signature Petal Pathway</li>
+                        <li>✓ Double-Ring Petal Heart on Bed</li>
+                        <li>✓ Satin Ribbon Pillow Finishes</li>
+                    </ul>
+                    <a href="#booking" class="block w-full py-4 bg-black text-white text-center rounded-full font-bold uppercase">Reserve Collection</a>
+                </div>
+
+                <div class="bg-white p-10 rounded-luxury shadow-md border border-slate-100">
+                    <h3 class="text-3xl font-bold mb-2 italic text-black">Ultimate Monarch</h3>
+                    <div class="text-2xl font-bold mb-6">R12,500</div>
+                    <div class="text-sm font-bold uppercase text-slate-400 mb-4 underline text-black">The Presidential Experience</div>
+                    <ul class="space-y-4 mb-8 text-sm uppercase font-semibold">
+                        <li>✓ The Mega Monarch Balloon Cloud</li>
+                        <li>✓ The Royal Silk Rose Display</li>
+                        <li>✓ Custom Premium Beverage Choice</li>
+                        <li>✓ Luxury Artisanal Charcuterie Board</li>
+                        <li>✓ Custom Vinyl Floor Decal</li>
+                        <li>✓ 15 Hanging Photo Memories</li>
+                        <li>✓ 10 Hanging Silk Roses</li>
+                        <li>✓ Full Spa Bath Setup & Ribbons</li>
+                        <li>✓ Professional Next-Day Cleaning</li>
+                    </ul>
+                    <a href="#booking" class="block w-full py-4 bg-black text-white text-center rounded-full font-bold uppercase">Reserve Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-2 uppercase text-slate-900">The Enhancements</h2>
+            <p class="text-slate-500 italic mb-12 uppercase text-lg tracking-widest font-semibold">Elevate your experience</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto text-slate-900">
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Monarch Restoration Service: R550</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">The Giant Heirloom Bear: R2,200</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Hanging Photo Gallery (10): R350</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Custom Name Floor Decal: R650</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Luxury Charcuterie Board: R1,650</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Luxury Bath Setup: R850</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Helium Heart Balloons (Each): R65</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Imperial Rose Display: R3,500</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Luxury Bubbly Pedestal: R950</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Hanging Silk Roses: R500</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">The Velvet Petal Pathway: R450</div>
+                <div class="bg-slate-50 p-10 rounded-xl text-xs font-bold uppercase shadow-sm">Bespoke Monarch Bouquet: R850</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="py-20 bg-white border-t">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 uppercase text-slate-900">Moments Turned into Memories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <img src="https://i.postimg.cc/9M8fM95g/IMG-5775.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/507t0zdk/IMG-5781.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/vBHBbzjX/IMG-5832.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/W3b3TnKH/IMG-5897.png" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/QtxthbPc/IMG-5907.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/PxrxT4cy/IMG-5911.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/8Cb523yv/IMG-5914.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/Hxsxd2KR/IMG-5930.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/B6Q64gyH/IMG-5932.jpg" class="gallery-img" alt="Monarch Moment">
+                <img src="https://i.postimg.cc/B6Q64gyx/IMG-7185.jpg" class="gallery-img" alt="Will you be my girlfriend?">
+                <img src="https://i.postimg.cc/3RSwRG5S/IMG-7193.jpg" class="gallery-img" alt="Heart Petal Pathway">
+                <img src="https://i.postimg.cc/mD2DBwqn/IMG-7186.jpg" class="gallery-img" alt="Heirloom Teddy Bear">
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6 max-w-3xl text-slate-900">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 uppercase">Book Your Luxury Room Setup</h2>
+                <p class="text-slate-500 italic uppercase text-xs tracking-widest">Perfect for Birthdays, Proposals, and Anniversaries</p>
+            </div>
+            
+            <form id="bookingForm" action="https://formspree.io/f/mbdkoyvn" method="POST" class="bg-white p-8 md:p-12 rounded-luxury shadow-xl space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" class="monarch-input" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Email Address</label>
+                        <input type="email" name="email" placeholder="example@mail.com" class="monarch-input" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">WhatsApp Number</label>
+                        <input type="tel" name="whatsapp" placeholder="067 123 4567" class="monarch-input" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Color Theme</label>
+                        <input type="text" name="theme" placeholder="e.g. Red & Gold" class="monarch-input">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Package Choice</label>
+                        <select name="package" class="monarch-input bg-transparent" required>
+                            <option>Monarch Entry (R1,950)</option>
+                            <option>Royal Romance (R3,600)</option>
+                            <option>Imperial Suite (R6,200)</option>
+                            <option>The Sovereign (R8,900)</option>
+                            <option>Ultimate Monarch (R12,500)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Date & Location</label>
+                        <input type="text" name="date_location" placeholder="14 Feb - Hotel Name" class="monarch-input" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Special Requests / Notes</label>
+                    <textarea name="notes" placeholder="Add-ons, specific details..." class="monarch-input h-24"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg">Submit Request</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="quote" class="py-20 bg-white">
+        <div class="container mx-auto px-6 max-w-3xl text-slate-900">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4 uppercase">Request a Custom Quote</h2>
+                <p class="text-slate-500 italic uppercase text-xs tracking-widest">For unique visions and custom events</p>
+            </div>
+            
+            <form id="quoteForm" action="https://formspree.io/f/mbdkoyvn" method="POST" class="bg-slate-50 p-8 md:p-12 rounded-luxury space-y-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Name</label>
+                        <input type="text" name="name" placeholder="Your Name" class="monarch-input border-slate-300" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Phone Number</label>
+                        <input type="tel" name="phone" placeholder="067 123 4567" class="monarch-input border-slate-300" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Type of Event</label>
+                        <input type="text" name="event_type" placeholder="e.g. Graduation" class="monarch-input border-slate-300">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Budget Range</label>
+                        <input type="text" name="budget" placeholder="e.g. R2000 - R4000" class="monarch-input border-slate-300">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-[10px] font-bold uppercase mb-1 tracking-widest text-slate-400">Vision / Description</label>
+                    <textarea name="description" placeholder="Tell us about your dream setup..." class="monarch-input border-slate-300 h-32"></textarea>
+                </div>
+                <button type="submit" class="w-full py-4 bg-black text-white rounded-full font-bold uppercase tracking-widest hover:bg-slate-800 transition shadow-lg">Request Custom Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-white border-t border-slate-100 py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-4 uppercase tracking-tighter text-slate-900">Monarch Suite Decor</h2>
+            <p class="text-slate-500 mb-12 max-w-lg mx-auto italic">Cape Town's premier event decorator. Moments turned into memories.</p>
+            <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto items-center text-slate-900">
+                <div>
+                    <p class="uppercase text-[10px] font-bold tracking-[0.2em] text-slate-400 mb-2">Call Us</p>
+                    <p class="text-lg">☏ 081 542 7236</p>
+                </div>
+                <div>
+                    <p class="uppercase text-[10px] font-bold tracking-[0.2em] text-slate-400 mb-2">Email Us</p>
+                    <p class="text-lg">✉ monarchsuitedecor@gmail.com</p>
+                </div>
+                <div>
+                    <p class="uppercase text-[10px] font-bold tracking-[0.2em] text-slate-400 mb-2">Follow Us</p>
+                    <a href="https://www.instagram.com/monarchsuitedecor/" target="_blank" class="flex justify-center items-center gap-2 hover:opacity-60 transition font-bold uppercase text-xs">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                </div>
+            </div>
+            <p class="mt-20 text-slate-300 text-[10px] uppercase tracking-[0.5em]">© 2026 Monarch Suite Decor. Cape Town.</p>
+        </div>
+    </footer>
+
+    <script>
+        const modal = document.getElementById('successModal');
+        function openModal() { modal.classList.remove('hidden'); }
+        function closeModal() { modal.classList.add('hidden'); }
+
+        async function handleSubmit(event) {
+            event.preventDefault();
+            const form = event.target;
+            const data = new FormData(form);
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
+            });
+            if (response.ok) {
+                openModal();
+                form.reset();
+            } else {
+                alert("Oops! There was a problem. Please message us on WhatsApp.");
+            }
+        }
+        document.getElementById('bookingForm').addEventListener('submit', handleSubmit);
+        document.getElementById('quoteForm').addEventListener('submit', handleSubmit);
+    </script>
+</body>
+</html>
